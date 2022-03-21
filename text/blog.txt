@@ -20,7 +20,7 @@ blog/donate
 blog/atelier-series-guide
 blog/gust-sales
 blog/a-history-of-gust-dlc
-blog/gust's-dark-past:-jet-ion-gp
+blog/gusts-dark-past-jet-ion-gp
 blog/lucia-bullying-in-the-lydie-and-suelle-files
 blog/barrel-wisdom-20-is-here
 shallie/chapter-1
@@ -94,3 +94,10 @@ second-light/how-to-get-true-end
 second-light/ether-mechanics
 blog/the-deep-dive-blue-reflection-second-light
 second-light/location-guide
+blog/viorate-not-pronounced-how-you-think
+blog/gust-mods
+blog/gusts-top-10-worst-box-arts
+sophie2/how-to-raise-gathering-rank
+sophie2/faq
+sophie2/beating-any-boss
+sophie2/beating-the-final-boss-on-very-hard

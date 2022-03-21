@@ -1,13 +1,14 @@
 import xml.etree.cElementTree as ET
 import datetime
 
-games = ['totori', 'escha', 'shallie', 'ryza2', 'bluereflection', 'second-light']
+games = ['totori', 'escha', 'shallie', 'ryza2', 'sophie2', 'bluereflection', 'second-light']
 
 langs = {
     "totori": ["en", "ja"],
     "escha": ["en", "ja"],
     "shallie": ["en", "ja"],
     "ryza2": ["en", "fr", "ko", "ja", "sc", "tc"],
+    "sophie2": ["en", "ko", "ja", "sc", "tc"],
     "bluereflection": ["en"],
     "second-light": ["en", "ja", "sc", "tc"],
 }
@@ -30,13 +31,14 @@ for game in games:
     file = open("text/"+game+".txt", 'r')
     
     for line in file:
-        url = ET.SubElement(urlset, "url")
-        ET.SubElement(url, "loc").text = 'https://barrelwisdom.com/{0}/{1}/{2}'.format(game, line.strip(), "en")
-        for lang in langs[game]:
-            l = ET.SubElement(url, 'xhtml:link')
-            l.set('rel','alternate')
-            l.set('hreflang',code[lang])
-            l.set('href', 'https://barrelwisdom.com/{0}/{1}/{2}'.format(game, line.strip(), lang))
+        for version in langs[game]:
+            url = ET.SubElement(urlset, "url")
+            ET.SubElement(url, "loc").text = 'https://barrelwisdom.com/{0}/{1}/{2}'.format(game, line.strip(), version)
+            for lang in langs[game]:
+                l = ET.SubElement(url, 'xhtml:link')
+                l.set('rel','alternate')
+                l.set('hreflang',code[lang])
+                l.set('href', 'https://barrelwisdom.com/{0}/{1}/{2}'.format(game, line.strip(), lang))
     
     tree = ET.ElementTree(urlset)
     tree.write("xmls/"+game+".xml", encoding='utf-8', xml_declaration=True)
